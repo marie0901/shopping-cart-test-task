@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>Shopping Cart</h1>
+<div mat-dialog-actions>
+  <button mat-button (click)="onClear()">Clear Cart</button>
+</div>
+
+<div mat-dialog-content>
+  <app-product-item
+    *ngFor="let productItem of cart | async"
+    [product]="productItem"
+  >
+  </app-product-item>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Close</button>
+</div>

@@ -1,0 +1,16 @@
+  <mat-card>
+    <h3>{{product.title}}</h3>
+    <img [src]="product.filename"  width="200" height="120">
+    <p>$ {{product.price}}</p>
+
+    <select [(ngModel)]="product.quantity" (ngModelChange)="changeQuantity($event)">
+       <option *ngFor="let o of [1,2,3,4,5,6,7,8,9]">
+          {{o}}
+       </option>
+    </select>
+
+
+    <button mat-button (click) = (toggleCart())>
+      {{ product.inCart ? 'Remove from cart' : 'Add to cart'}}
+    </button>
+  </mat-card>
